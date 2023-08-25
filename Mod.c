@@ -9,7 +9,7 @@
 void f_mod(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
-	int len = 0, aux;
+	int len = 0, old;
 
 	h = *head;
 	while (h)
@@ -34,8 +34,8 @@ void f_mod(stack_t **head, unsigned int counter)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	aux = h->next->n % h->n;
-	h->next->n = aux;
+	old = h->next->n % h->n;
+	h->next->n = old;
 	*head = h->next;
 	free(h);
 }
